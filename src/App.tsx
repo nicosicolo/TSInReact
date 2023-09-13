@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Button/>
+      <Button backgroundColor='blue' fontSize={30}/>
     </>
   )
 }
