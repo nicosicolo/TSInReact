@@ -1,7 +1,11 @@
+type Colors = "blue" | "red" | "green";
+
 type ButtonProps = {
-    backgroundColor: string,
+    backgroundColor: Colors, //We can specifie the only strings we want to accept as values.
+    textColor?: Colors,
     fontSize: number,
     pillShape?: boolean, //We make an optional attribute.
+    padding?: [number?, number?, number?, number?]; //Tuple: a little bit more specific array.
 }
 
 export default function Button ( props: ButtonProps) {
