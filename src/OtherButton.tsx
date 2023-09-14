@@ -1,15 +1,18 @@
 type ButtonProps = {
+    count?: number,
+    setCount?: React.Dispatch<React.SetStateAction<number>>; //I got this type from hovering on the set state function.
     style?: React.CSSProperties; //We can pass any css property that we want.
-    handleClick?: () => void; //This is the way to properly pass a function that doesn't return anything as prop.
-    children?: React.ReactNode, //A children is a ReactNode.
+    handleClick?: (text: string) => number;
+    children?: React.ReactNode | JSX.Element, //A children is a ReactNode.
 }
 
 
-export default function OtherButton ({style, handleClick, children}: ButtonProps) {
+export default function OtherButton ({count, setCount, style, handleClick, children}: ButtonProps) {
 
     return (
-        <button style={style} onClick={handleClick}>
+        <button style={style} onClick={()=>{handleClick; setCount}}>
             {children}
+            {count}
         </button>
     )
 }

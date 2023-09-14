@@ -5,12 +5,19 @@ import OtherButton from './OtherButton';
 
 function App() {
 
-  const handleClick = () => {}
+  const [ count, setCount ] = useState<number>(0);
+
+  const handleClick = (test: string): number => {
+    return 5;
+  }
+
+  const icon = <i></i>; //JSX Element.
 
   return (
     <>
       <Button backgroundColor='blue' fontSize={30} padding={[20, 30, 40]}/>
-      <OtherButton 
+      <OtherButton
+        count={count}
         style={{
           backgroundColor: 'red',
           fontSize: 30,
@@ -18,8 +25,8 @@ function App() {
           padding: "1rem 2rem",
           borderRadius: '1px solid black'
         }}
-        handleClick={handleClick}
-      >Click Me!</OtherButton>
+        handleClick={() => handleClick('texto') }
+      >{icon}</OtherButton>
     </>
   )
 }
