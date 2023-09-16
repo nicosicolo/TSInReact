@@ -1,6 +1,15 @@
-import React from 'react';
+/*
+type ButtonProps = {
+    type: 'submit' | 'reset' | 'button';
+    autoFocus?: boolean;
+};
+*/
 
-export default function AutoFocusButton () {
+import { ComponentProps } from "react"
 
-    return <button type='submit' autoFocus={true}>Click Me!</button>
+type ButtonProps = ComponentProps<"button"> //now we can receive every props that a button element could receive
+
+export default function AutoFocusButton ({type, autoFocus}: ButtonProps) {
+
+    return <button>Click Me!</button>
 }
