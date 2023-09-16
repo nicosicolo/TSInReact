@@ -1,3 +1,4 @@
+import React, { ComponentPropsWithoutRef } from "react";
 /*
 type ButtonProps = {
     type: 'submit' | 'reset' | 'button';
@@ -5,11 +6,10 @@ type ButtonProps = {
 };
 */
 
-import { ComponentProps } from "react"
 
-type ButtonProps = ComponentProps<"button"> //now we can receive every props that a button element could receive
+type ButtonProps = React.ComponentPropsWithoutRef<"button"> //now we can receive every props that a button element could receive
 
-export default function AutoFocusButton ({type, autoFocus}: ButtonProps) {
+export default function AutoFocusButton ({type, autoFocus, ...rest}: ButtonProps) { //We use spread operator to scoop the rest of props that are not exclusive for the button html element.
 
-    return <button>Click Me!</button>
+    return <button type={type} autoFocus={autoFocus} {...rest}>Click Me!</button> //Spread the rest of props
 }

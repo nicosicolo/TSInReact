@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Button from './Button';
 import OtherButton from './OtherButton';
+import AutoFocusButton from './AutoFocusButton';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         }}
         handleClick={() => handleClick('texto') }
       >{icon}</OtherButton>
+      <AutoFocusButton type="submit" autoFocus={true} defaultValue="Test" />
     </>
   )
 }
