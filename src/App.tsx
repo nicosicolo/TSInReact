@@ -3,6 +3,8 @@ import './App.css';
 import Button from './Button';
 import OtherButton from './OtherButton';
 import AutoFocusButton from './AutoFocusButton';
+import EventButton from './EventButton';
+import HookButton from './HookButton';
 
 function App() {
 
@@ -13,6 +15,8 @@ function App() {
   }
 
   const icon = <i></i>; //JSX Element.
+
+  const childrenText = 'Click Me!'; 
 
   return (
     <>
@@ -29,6 +33,8 @@ function App() {
         handleClick={() => handleClick('texto') }
       >{icon}</OtherButton>
       <AutoFocusButton type="submit" autoFocus={true} defaultValue="Test" />
+      <EventButton/>
+      <HookButton>{childrenText}</HookButton>
     </>
   )
 }
