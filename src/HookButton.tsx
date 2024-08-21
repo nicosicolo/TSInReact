@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 
 type Children = {
-    children?: React.ReactNode; //In the component we always pass the children with the name children (i mean, this is obvious what it doesn't hurt to remerber it!)
+    children?: React.ReactNode; //In the component we always pass the children with the name children (i mean, this is obvious but it doesn't hurt to remerber it!)
 }
 
 type User = {
